@@ -16,8 +16,6 @@ public class InventoryService {
 
     @Transactional(readOnly = true)
     public List<InventoryResponse> isInStock(List<String> skuCode) {
-    
-    System.out.println(skuCode);
 
         return inventoryRepository.findBySkuCodeIn(skuCode).stream()
                 .map(inventory ->
